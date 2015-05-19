@@ -1,6 +1,7 @@
 angular.module('starter.controller', [])
-.controller('DebugCtrl', ['$scope', 'CallLogService', 'LocalStorage',
-    function ($scope, CallLogService, LocalStorage) {
+.controller('DebugCtrl', ['$scope', 'CallLogService',
+    function ($scope, CallLogService) {
+        alert('passe');
 
         $scope.data = {};
         $scope.callTypeDisplay = function(type) {
@@ -20,8 +21,10 @@ angular.module('starter.controller', [])
             function(callLog) {
                 console.log(callLog);
                 $scope.data.lastCall = callLog[0];
+                alert('test');
             },
             function(error) {
                 console.error(error);
+                alert('error');
             });
     }]);
